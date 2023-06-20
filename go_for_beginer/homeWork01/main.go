@@ -15,7 +15,6 @@ func main()  {
 	printCircleArea(-2)
 	printRectangleArea( 2, 4 )
 	// printTriangleArea()
-
 }
 
 
