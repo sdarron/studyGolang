@@ -14,7 +14,29 @@ func main()  {
 	printCircleArea(2)
 	printCircleArea(-2)
 	printRectangleArea( 2, 4 )
-	// printTriangleArea()
+	printTriangleArea( 8, 2)
+}
+
+func calculateTriangleArea( base int, height int ) ( int, error ){
+	if base <=0 {
+		return 0, errors.New("Основание треугольника не может быть отрицательным")
+	}
+	if height <= 0 {
+		return 0, errors.New("Высота треугольника не может быть отрицательной")
+	}
+	return ( base * height ) / 2, nil
+}
+
+func printTriangleArea( base int, height int){
+	triangleArea, err := calculateTriangleArea( base, height )
+	if err != nil{
+		fmt.Println(err.Error())
+		return
+	}
+	fmt.Printf("Основание треугольнка равно %d см. и высота треугольника равна %d см.\n", base, height)	
+	print("Формула для площади треугольника: S=(a * h) / 2\n")
+	fmt.Printf("Площать треугольника: %d см. кв. \n", triangleArea)
+
 }
 
 
