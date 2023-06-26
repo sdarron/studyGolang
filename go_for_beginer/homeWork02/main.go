@@ -7,6 +7,7 @@ package main
 
 import ( 
 	"fmt"
+	"math"
 )
 
 func main(){
@@ -18,7 +19,17 @@ func main(){
 	}
 	slice = swopSlice( slice )
 	fmt.Println(slice)
+
+	n := 5
+	numbersInPower( n )	
 }
+
+func numbersInPower( num int ){
+	for index := 1; index <= num; index++ {		
+		fmt.Printf("Число 2 в степени %d равно %d\n", index, int(math.Pow(2, float64(index))))
+	}
+}	
+
 
 func swopSlice( slice []int ) ( []int ){
 	for index := 0; index < len(slice) / 2; index++ {
